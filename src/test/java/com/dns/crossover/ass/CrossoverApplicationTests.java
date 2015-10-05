@@ -30,10 +30,10 @@ public class CrossoverApplicationTests {
 	}
 	
 	@Test
-	public void/// testProjection() {
+	public void testProjection() {
 		
 		//ProjectionFactory factory = new SpelAwareProxyProjectionFactory();
-		as/sertTrue(  customerService.listAllCustomerKeyVal().size()>0);
+		assertTrue(  customerService.listAllCustomerKeyVal().size()>0);
 	}
 
 }

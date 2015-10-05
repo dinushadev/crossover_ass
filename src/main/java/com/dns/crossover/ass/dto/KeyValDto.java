@@ -5,16 +5,16 @@ package com.dns.crossover.ass.dto;
  * @author dinusha
  *
  */
-public class ComboBoxItem
+public class KeyValDto
 {
 	private String key;
 	private String value;
 
-	public ComboBoxItem()
+	public KeyValDto()
 	{
 	}
 
-	public ComboBoxItem(String key, String value)
+	public KeyValDto(String key, String value)
 	{
 		this.key = key;
 		this.value = value;
@@ -44,9 +44,9 @@ public class ComboBoxItem
 	{
 		if(obj==null)
 			return false;
-		if(!(obj instanceof ComboBoxItem))
+		if(!(obj instanceof KeyValDto))
 			return false;
-		return getKey().equals(((ComboBoxItem)obj).getKey());
+		return getKey().equals(((KeyValDto)obj).getKey());
 	}
 
 	@Override

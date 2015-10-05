@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dns.crossover.ass.domain.Customer;
 import com.dns.crossover.ass.domain.ItemList;
-import com.dns.crossover.ass.dto.ComboBoxItem;
+import com.dns.crossover.ass.dto.KeyValDto;
+import com.dns.crossover.ass.dto.KeyValListDto;
 import com.dns.crossover.ass.service.CustomerService;
 
 @RestController
@@ -31,10 +32,13 @@ public class CustomerController {
 		
 		return customerService.listAllCustomer();
 	}
-	/*
+	
 	@RequestMapping(value="keyval",method=RequestMethod.GET)
-	public List<ComboBoxItem> listCustomerKeyVal() {
+	public KeyValListDto listCustomerKeyVal() {
+		List<KeyValDto> dtos = customerService.listAllCustomerKeyVal();
+		KeyValListDto lists = new KeyValListDto();
+		lists.setList(dtos);
 		
-		return customerService.listAllCustomerKeyVal();
-	}*/
+		return lists;
+	}
 }

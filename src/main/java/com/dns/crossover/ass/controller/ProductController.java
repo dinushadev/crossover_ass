@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dns.crossover.ass.domain.ItemList;
 import com.dns.crossover.ass.domain.Product;
-import com.dns.crossover.ass.repo.IProductRepo;
+import com.dns.crossover.ass.dto.KeyValDto;
+import com.dns.crossover.ass.dto.KeyValListDto;
 import com.dns.crossover.ass.service.ProductService;
 
 @RestController
@@ -31,6 +32,16 @@ public class ProductController {
 	public ItemList<Product> listProduct() {
 		
 		return productService.listAllProduct();
+	}
+	
+	@RequestMapping(value="keyval",method=RequestMethod.GET)
+	public KeyValListDto listKeyValProduct() {
+		
+		List<KeyValDto> dtos = productService.listAllProductKeyVal();
+		KeyValListDto lists = new KeyValListDto();
+		lists.setList(dtos);
+		
+		return lists;
 	}
 	
 }
