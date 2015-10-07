@@ -15,6 +15,7 @@ import com.dns.crossover.ass.domain.ItemList;
 import com.dns.crossover.ass.domain.Product;
 import com.dns.crossover.ass.dto.KeyValDto;
 import com.dns.crossover.ass.repo.IProductRepo;
+import com.dns.crossover.ass.utill.ValidaterUtill;
 
 /**
  * @author dinusha
@@ -25,6 +26,8 @@ public class ProductService {
 	
 	@Autowired
 	private IProductRepo productRepo;
+	
+
 	
 
 	public Product createProduct(Product product) {
@@ -50,6 +53,22 @@ public class ProductService {
 		}
 		
 		return keyValList;
+	}
+
+	
+	public Product getProduct(String code) {
+		
+		return productRepo.findOne(code);
+	}
+
+	public void deleteProduct(String code) {
+		
+		productRepo.delete(code);
+	}
+
+	public Double getProductPrice(String code) {
+		double price = productRepo.findPriceByCode(code);
+		return price;
 	}
 
 }

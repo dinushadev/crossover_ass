@@ -19,6 +19,9 @@ public class OrderDto {
 	private int quantity;
 	private double total;
 	
+	public OrderDto() {
+	}
+	
 	public OrderDto(Order order ) {
 		this.orderNo = order.getOrderNo();
 		this.customerCode = order.getCustomer().getCode();

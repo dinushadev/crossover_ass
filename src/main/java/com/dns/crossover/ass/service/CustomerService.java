@@ -49,4 +49,13 @@ public class CustomerService {
 
 		return keyValList;
 	}
+
+	public Customer getCustomer(String code) {
+		
+		return customerRepo.findOne(code);
+	}
+
+	public void deleteCustomer(String code) {
+		customerRepo.delete(code);
+	}
 }

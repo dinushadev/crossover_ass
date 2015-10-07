@@ -11,6 +11,6 @@ import com.dns.crossover.ass.domain.Order;
  * @author dinusha
  *
  */
-public interface IOrderRepo extends CrudRepository<Order, Integer> {
+public interface IOrderRepo extends CrudRepository<Order, Long> {
 
 }

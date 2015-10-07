@@ -3,25 +3,31 @@
  */
 package com.dns.crossover.ass.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
  * @author dinusha
  *
  */
-@Entity
-public class Order {
+@Entity(name="sales_order")
+public class Order implements Serializable{
 	
 	@Id
 	private Long orderNo;
 	
 	@ManyToOne(targetEntity=Customer.class)
 	private Customer customer;
-	@ManyToOne(targetEntity=Customer.class)
+	
+	@ManyToOne(targetEntity=Product.class)
 	private Product product;
+	
 	private int quantity;
+	
 	private double total;
 	
 	public Long getOrderNo() {

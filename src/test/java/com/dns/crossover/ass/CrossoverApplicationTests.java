@@ -19,7 +19,7 @@ public class CrossoverApplicationTests {
 	
 	@Test
 	public void contextLoads() {
-		System.out.println("ddd");
+		
 		assertTrue(true);
 	}
 	
